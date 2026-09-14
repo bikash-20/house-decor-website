@@ -15,6 +15,12 @@ export interface GlassPillProps {
   className?: string;
   /** Hue of the gradient border. 'wisteria' matches the brand; 'paper' is cooler. */
   tone?: 'wisteria' | 'paper' | 'lavender';
+  /**
+   * Typographic preset.
+   *  - `eyebrow` (default): uppercase, tracked 0.22em, font-sans — for hero eyebrows.
+   *  - `wordmark`: title case, normal tracking, font-display — for the nav brand.
+   */
+  preset?: 'eyebrow' | 'wordmark';
 }
 
 /**
@@ -41,6 +47,7 @@ export default function GlassPill({
   onClick,
   className = '',
   tone = 'wisteria',
+  preset = 'eyebrow',
 }: GlassPillProps) {
   const isAnchor = Boolean(href);
   const Component = isAnchor ? 'a' : (Tag as ElementType);
@@ -54,8 +61,10 @@ export default function GlassPill({
 
   const base =
     'group relative inline-flex w-fit items-center gap-2.5 overflow-hidden rounded-full px-5 py-2.5 ' +
-    'font-sans text-[12px] font-normal tracking-[0.22em] uppercase ' +
-    'text-paper/90 backdrop-blur-md backdrop-saturate-150 ' +
+    (preset === 'wordmark'
+      ? 'font-display text-[1.05rem] md:text-[1.15rem] font-normal tracking-tight text-paper '
+      : 'font-sans text-[12px] font-normal tracking-[0.22em] uppercase text-paper/90 ') +
+    'backdrop-blur-md backdrop-saturate-150 ' +
     'transition-all duration-500 ease-[var(--ease-lush)] ' +
     'hover:-translate-y-0.5 hover:text-paper hover:shadow-[0_18px_36px_-18px_rgba(0,0,0,0.55)]';
 

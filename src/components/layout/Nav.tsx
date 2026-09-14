@@ -29,7 +29,7 @@ export default function Nav() {
         className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10"
         aria-label="Primary"
       >
-        <Logo markSize={34} />
+        <Logo markSize={34} glass />
 
         <ul className="flex items-center gap-8 md:gap-10">
           {siteConfig.nav.map((item) => {
