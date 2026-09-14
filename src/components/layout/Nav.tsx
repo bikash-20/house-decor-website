@@ -1,9 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Logo from '@/components/ui/Logo';
+import GlassPill from '@/components/ui/GlassPill';
 import { siteConfig } from '@/config/site';
 
 export default function Nav() {
@@ -31,7 +32,7 @@ export default function Nav() {
       >
         <Logo markSize={34} glass />
 
-        <ul className="flex items-center gap-8 md:gap-10">
+        <ul className="flex items-center gap-3 md:gap-4">
           {siteConfig.nav.map((item) => {
             const isActive =
               item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
@@ -39,16 +40,23 @@ export default function Nav() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="group relative inline-block py-1 text-[15px] font-light text-ink"
                   aria-current={isActive ? 'page' : undefined}
+                  className="inline-flex"
                 >
-                  {item.label}
-                  <span
-                    aria-hidden
-                    className={`absolute bottom-0 left-0 h-px bg-wisteria transition-all duration-500 ease-[var(--ease-lush)] ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}
-                  />
+                  <GlassPill
+                    tone={isActive ? 'wisteria' : 'paper'}
+                    className="!px-4 !py-2"
+                  >
+                    <span
+                      className={`inline-block h-1.5 w-1.5 rounded-full transition-all duration-500 ease-[var(--ease-lush)] ${
+                        isActive
+                          ? 'bg-[var(--color-accent-lavender-soft)] shadow-[0_0_8px_rgba(183,159,209,0.85)]'
+                          : 'bg-paper/55 group-hover:bg-paper'
+                      }`}
+                      aria-hidden
+                    />
+                    <span>{item.label}</span>
+                  </GlassPill>
                 </Link>
               </li>
             );
