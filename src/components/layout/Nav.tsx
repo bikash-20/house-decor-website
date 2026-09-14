@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Logo from '@/components/ui/Logo';
 import { siteConfig } from '@/config/site';
 
 export default function Nav() {
@@ -28,13 +29,7 @@ export default function Nav() {
         className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10"
         aria-label="Primary"
       >
-        <Link
-          href="/"
-          className="font-display text-2xl md:text-3xl tracking-tight text-wisteria"
-          aria-label={`${siteConfig.brand} — home`}
-        >
-          Wisteria <span className="text-[var(--color-accent-lavender-soft)] italic">&amp;</span> Blossom
-        </Link>
+        <Logo markSize={34} />
 
         <ul className="flex items-center gap-8 md:gap-10">
           {siteConfig.nav.map((item) => {

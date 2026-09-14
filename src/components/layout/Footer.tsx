@@ -1,5 +1,6 @@
 import { siteConfig } from '@/config/site';
 import BotanicalDivider from '@/components/ui/BotanicalDivider';
+import LogoMark from '@/components/ui/LogoMark';
 
 export default function Footer() {
   const c = siteConfig.contact;
@@ -10,6 +11,14 @@ export default function Footer() {
     >
       <div className="grain-overlay" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <div className="mb-10 flex items-center gap-3 text-paper">
+          <LogoMark size={40} />
+          <span className="font-display text-2xl tracking-tight">
+            <span>Wisteria</span>{' '}
+            <span className="text-[var(--color-accent-lavender-soft)] italic">&amp;</span>{' '}
+            <span>Blossom</span>
+          </span>
+        </div>
         <h2
           id="footer-heading"
           className="font-display text-4xl text-paper md:text-6xl leading-[1.05]"

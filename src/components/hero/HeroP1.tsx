@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGsapReveal } from '@/hooks/useGsapReveal';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import GlassPill from '@/components/ui/GlassPill';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -100,9 +101,15 @@ export default function HeroP1({ imageSrc }: { imageSrc: string }) {
         ref={headlineRef}
         className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-20 md:px-10 md:pb-28"
       >
-        <p data-reveal className="eyebrow text-paper/85">
-          Bedroom &amp; Wall Decor — Vol. 01
-        </p>
+        <div data-reveal>
+          <GlassPill>
+            <span
+              aria-hidden
+              className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent-lavender-soft)] shadow-[0_0_8px_rgba(183,159,209,0.8)]"
+            />
+            <span>Bedroom &amp; Wall Decor — Vol. 01</span>
+          </GlassPill>
+        </div>
         <h1
           data-reveal
           className="mt-5 max-w-3xl font-display text-[clamp(3rem,7vw,6rem)] leading-[0.98] text-paper"
