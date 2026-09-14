@@ -20,7 +20,7 @@ A 2-page marketing/showcase website for a home decor brand. Wallpaper murals and
 
 | Layer | Choice |
 |---|---|
-| Framework | Next.js 15.1.6 (App Router, React 19) |
+| Framework | Next.js 16.3.5 (App Router, Turbopack, React 19) |
 | Language | TypeScript 5.7 (strict) |
 | Styling | Tailwind CSS v4 + CSS custom properties (design tokens) |
 | Fonts | Cormorant Garamond (display) + Jost (body), via `next/font/google` |
