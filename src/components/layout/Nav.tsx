@@ -30,10 +30,10 @@ export default function Nav() {
       >
         <Link
           href="/"
-          className="font-display text-2xl md:text-3xl tracking-tight text-ink"
+          className="font-display text-2xl md:text-3xl tracking-tight text-wisteria"
           aria-label={`${siteConfig.brand} — home`}
         >
-          Wisteria <span className="text-wisteria italic">&amp;</span> Blossom
+          Wisteria <span className="text-[var(--color-accent-lavender-soft)] italic">&amp;</span> Blossom
         </Link>
 
         <ul className="flex items-center gap-8 md:gap-10">
